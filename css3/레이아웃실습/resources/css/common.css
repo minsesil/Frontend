@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+* {
+  color: black; 
+  font-family: Gowun Dodum; 
+  margin: 0 auto;
+}
+a {text-decoration: none;}

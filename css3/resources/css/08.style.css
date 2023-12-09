@@ -1,0 +1,42 @@
+.test {
+    background-color: yellowgreen;
+    width: 100px;
+    height: 100px;
+    border: 10px solid black;    
+}
+
+/*-------padding------*/
+#test1 {
+    padding: 100px;
+}
+
+#test2 {
+    padding-top: 100px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+}
+
+#test3 {     
+    padding: 50px;  /* 모든여백(상하좌우모두50) */
+    padding: 20px 50px; /* 위,아래20 좌,우 50 */
+    padding: 20px 50px 100px; /*위20 좌,우50 아래100 */
+    padding: 100px 20px 30px 10px; /*위100 우20 아30 좌10-위에서부터 시계방향 */
+}
+
+/*-------margin------*/
+
+#test4 {
+    margin: 50px;
+}
+
+#test5 {
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+#test6 {
+    margin: 80px;
+    margin: 30px 50px 80px 100px;   /* 위에서부터 시계방향 */
+    margin: auto;  /* 좌우 기준으로 가운데 배치 */
+}

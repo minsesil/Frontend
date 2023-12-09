@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 관련 스타일</title>
+    <link href="resources/css/11.style.css" rel="stylesheet">
+
+</head>
+<body>
+    <h1>배경관련 스타일(background~)</h1>
+
+    <h3>background-color : 배경색을 지정하고자 할때 사용</h3>
+
+        <!--#div-bg>lorem*3 아래다름--> 
+        <div id="div-bg">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam optio minus ipsum ullam quos nesciunt, ab sunt magni ex? Maiores ratione nulla distinctio excepturi modi quaerat tenetur asperiores incidunt nemo!
+        Mollitia consequuntur natus, eaque, quidem omnis reprehenderit quisquam ullam veniam tempora itaque repudiandae quaerat voluptatum esse, repellendus odio alias nostrum provident numquam voluptatem illum praesentium nemo ex incidunt ipsa! Iusto?
+        Ea consequatur voluptatibus recusandae repellat minus debitis expedita quibusdam, repudiandae fugit voluptates modi architecto dolorum quod esse est ratione fugiat, culpa maiores necessitatibus? Ab consequuntur nihil corrupti consequatur modi doloremque!
+    </div>
+
+    <hr>
+   <!------------------------------------------------------------------>
+    <h3>background-clip : 배경을 적용시키고자 하는 범위를 지정할 때 사용</h3>
+    <pre>
+        선택자 {
+            background-clip: border-box(기본값) | padding-box | content-box
+        }
+    </pre>
+
+    <!--(.div-test#div$>lorem)*3-->
+    <div class="div-test" id="div1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non impedit sequi amet deserunt nostrum quas similique aut asperiores expedita, sunt, molestias doloribus unde autem temporibus obcaecati laboriosam maiores nemo! In.</div>
+    <div class="div-test" id="div2">Dicta ipsa minima ratione in ipsum nihil totam, amet hic eos dignissimos obcaecati beatae corrupti. Quia excepturi, error sint ad quis quasi ipsum saepe aspernatur, est porro ut maiores. Aliquid!</div>
+    <div class="div-test" id="div3">Voluptatibus aliquam laborum pariatur dolor debitis sunt, impedit quod magnam? Iusto quidem dicta deserunt non. Repellendus officia omnis, odit at reiciendis voluptatibus nobis consectetur aut voluptatum, mollitia reprehenderit cumque. Possimus.</div>
+ 
+    <hr>
+    <!----------------------------------------------------------------->
+    <h3>배경에 이미지 넣기</h3>
+    <pre>
+        선택자 {
+            background-image:url("이미지 경로");
+            background-repeat: repeat | repeat-x | repeat-y | no-repeat;
+            background-size: auto | contain | cover | px px | % %;
+            background-position: 좌/우/가운데 위/아래/가운데 | px px | % %;
+            background-attachment: scroll | fixed;
+        }
+    </pre>
+
+    <div id="bg-img"></div>
+
+
+</body>
+</html>

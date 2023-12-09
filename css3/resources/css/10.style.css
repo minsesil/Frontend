@@ -1,0 +1,36 @@
+table {     /*테이블 전체*/
+    border: 1px solid;
+
+    border-collapse: separate;   /*기본값*/
+    border-spacing: 20px 10px;
+    border-collapse: collapse;
+
+    width: 450px;
+    table-layout: fixed;
+    
+}
+
+thead, tfoot {
+    background-color: gray;
+}
+
+tbody{
+    background-color: beige;
+}
+
+th, td {
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: bottom;  /* 테이블에서만 사용가능 top|middle(기본값)|bottom */
+    border: 1px dashed red;
+
+    /*긴글씨 칸밖으로 나가지않고 내리고싶을때
+    글자에 공백이 없어도 중간에 끊어서 내림*/
+    word-break: break-all;
+}
+
+.borderTop {
+    border-top: 5px double palevioletred;
+}

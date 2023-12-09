@@ -1,0 +1,50 @@
+#c{
+    color:red;
+    color:#ff73ee;
+    color:rgb(46, 85, 91);
+    color:rgba(174, 17, 6, 0.6);
+    color:hsl(210, 50%, 50%); /* h:색상값(0~360), s:채도(%), l:명도(%) -전문가들이많이씀*/
+    color:hsla(210, 50%, 50%, 0.5); /*전문가*/
+}
+
+#td1{text-decoration: underline;}
+#td2{text-decoration: line-through;}
+#td3{text-decoration: overline;}
+#td4{text-decoration: none; color:black;}
+
+
+#tt1{text-transform: uppercase;}
+#tt2{text-transform: lowercase;}
+#tt3{text-transform: capitalize;}
+
+
+.shadow {font-size: 50px; font-weight: 900;}
+#ts1{color:orangered;
+     text-shadow: 5px 5px; /*번짐정도 생략시 기본적으로 선명한 그림자, 색상 생략시 글자의 색상 그대로 */
+     text-shadow: -5px -5px 5px yellow;
+}
+
+#ts2{color:white;
+    text-shadow: 0 0 10px black;
+    text-shadow: 0 0 10px rgb(124, 231, 150);
+}
+
+#ts3{  /*여러개가능*/
+    text-shadow: 0 0 4px gray,
+                 0 -5px 4px yellow,
+                 0 -10px 8px orange,
+                 0 -15px 15px orangered,
+                 0 -20px 20px red;
+}
+
+#justify {
+    text-align: justify;
+}
+
+#right {
+    text-align: right;
+}
+
+#center {
+    text-align: center;
+}

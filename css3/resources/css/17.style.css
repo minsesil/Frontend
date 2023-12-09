@@ -1,0 +1,44 @@
+header {text-align: center;}
+#menus {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu-item {
+  width: 300px;
+  height: 200px;
+  margin: 5px;
+  background-size: cover;
+  background: no-repeat center;
+}
+#menu1 {
+  background: url(../img/img1.jpg);
+}
+#menu2 {
+  background: url(../img/img2.jpg);
+}
+#menu3 {
+  background: url(../img/img3.jpg);
+}
+#menu4 {
+  background: url(../img/img4.jpg);
+}
+#menu5 {
+  background: url(../img/img5.jpg);
+}
+#menu6 {
+  background: url(../img/rice.jpg);
+}
+#menu7 {
+  background: url(../img/pea-soup.jpg);
+}
+#menu8 {
+  background: url(../img/zucchini.jpg);
+}
+#menu9 {
+  background: url(../img/lobster.jpg);
+}
+#menu10 {
+  background: url(../img/bridal-party.jpg);
+}

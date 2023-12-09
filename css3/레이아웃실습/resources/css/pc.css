@@ -1,0 +1,42 @@
+/* 전체 */
+body {
+  width:1000px;
+  background-color: rgb(238, 241, 212);
+}
+
+/* header */
+header {
+  height: 300px;
+}
+#logo {
+  float: left;
+}
+#login {
+  float: right;
+  margin-top: 5px;
+}
+#titleImg {
+  clear: both;
+  height: 262px;
+  width: 100%;
+}
+
+/* nav */
+.navi {width: 1000px; height: 60px; background-color: rgb(10, 34, 80);}
+.navi>a {display: inline-block; 
+  width: 246px; 
+  color: white; 
+  text-align: center;
+  line-height: 60px;
+}
+
+
+/* 본문 */
+section {
+  float: center;
+  width: 700px;
+  height: 500px;
+  padding: 20px;
+  
+ 
+}

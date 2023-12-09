@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="resources/css/06.style.css" rel="stylesheet"><!--링크걸기-->
+    <title>텍스트 관련 스타일</title>
+</head>
+<body>
+
+    <h1>텍스트 관련 스타일</h1>
+
+    <h3>color : 텍스트의 색상 지정</h3>
+    <pre>
+        선택자 {
+               color: 색상명 | 16진수 | rgb(x,x,x) | rgba(x,x,x,x) | hsl(x,x,x) | hsla(x,x,x,x)
+        }
+    </pre>
+
+    <p id="c">색상 지정하기</p>
+
+    <hr>
+
+    <h3>text-decoration : 텍스트에 줄을 긋거나 없앨때 사용</h3>
+        <pre>
+            text-decoration: none | underline | overline | line_through;
+        </pre>
+
+        <!--ul>li#td$*3-->
+        <ul>
+            <li id="td1">텍스트 영역 아래 줄 긋기</li>
+            <li id="td2">텍스트 영역 중간에 줄 긋기</li>
+            <li id="td3">텍스트 영역 위에 줄 긋기</li>
+        </ul>
+
+        <a href="http://www.naver.com" target="_blank" id="td4">네이버로 이동</a>
+
+<hr><!-------------------------------------------------------------------------------------->
+       
+        <h3>text-transform : 영문텍스트의 대소문자 변환시 사용</h3>
+        <pre>
+            선택자 {
+                text-transform: uppercase | lowercase | capitalize;
+            }
+        </pre>
+
+        <!--ol>li#tt$*3-->
+        <ol>
+            <li id="tt1">uppercase : 모든 영문자를 대문자로</li>
+            <li id="tt2">LOWERCASE : 모든 영문자를 소문자로</li>
+            <li id="tt3">capitalize : 영문자의 first text만 대문자로</li>
+        </ol>
+
+        <hr>
+
+        <h3>text-shadow: 텍스트에 그림자 효과를 줄 때 사용</h3>
+        <pre>
+            선택자{
+                text-shadow : 가로거리(x) 세로거리(y) [번짐정도] [색상];
+            }            
+        </pre>
+        <div>
+            <span class="shadow" id="ts1">HTML</span><br><br>
+            <span class="shadow" id="ts2">HTML</span><br><br>
+            <span class="shadow" id="ts3">HTML</span><br><br>
+        </div>
+ 
+<hr><!-------------------------------------------------------------------------------------->
+    <h3>text-align: 텍스트 정렬할 때 사용</h3>
+    <pre>
+        선택자{
+            text-align: left(기본값) | justify | left | right | center;
+        }
+    </pre>
+
+    <!--(h4+p>lorem*2)*4-->
+    <h4>왼쪽정렬</h4>
+    <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque laborum dolor soluta delectus iure, rem eveniet, quaerat eaque, placeat vitae eius odit? Totam expedita repellat voluptates fugit dolorem commodi repudiandae!</span><span>Distinctio fugit molestias autem facilis voluptatum, ea beatae! Optio explicabo veritatis architecto commodi sequi sit repellendus corrupti labore sapiente est reprehenderit, consequatur quibusdam temporibus neque possimus asperiores. Ab, optio eos.</span></p>
+    
+    <h4>양쪽정렬</h4>
+    <p id="justify"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad similique facilis cum labore magni ex maiores quos aliquam minima praesentium excepturi assumenda modi nihil saepe eligendi, architecto reprehenderit autem officia.</span><span>Aliquam, alias facilis. Obcaecati, nulla voluptatum quae quod numquam eveniet corporis illum? Asperiores blanditiis nam tempora sunt ex voluptatibus sit deserunt! Voluptate sunt est corrupti provident accusamus nemo! Amet, dicta.</span></p>
+   
+    <h4>오른쪽정렬</h4>
+    <p id="right"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ut saepe modi quod soluta alias iure, quam tempore blanditiis optio quae ea! At pariatur, magni corporis officia a eaque adipisci?</span><span>Voluptas perspiciatis voluptates totam, voluptatibus incidunt at maiores tempora illum dicta quidem quam! Officia repellendus dolore fugiat voluptas nostrum quibusdam, ea quae expedita sit iure blanditiis nihil unde voluptate beatae!</span></p>
+   
+    <h4>가운데정렬</h4>
+    <p id="center"><span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime cum ipsa, vero laudantium vitae voluptas iusto rerum consequatur ab explicabo in eligendi officiis cupiditate quam veniam corporis perspiciatis voluptatum suscipit!</span><span>Natus, praesentium corrupti repudiandae veniam exercitationem quam. Quas magnam vitae corporis veniam ipsa, suscipit, exercitationem est amet molestias eius voluptatum vel placeat ratione soluta aut cum nihil et, aperiam distinctio.</span></p>
+
+<hr><!-------------------------------------------------------------------------------------->
+
+    <h3>line-height : 줄간격 조절할 때 사용</h3>
+    <pre>
+        선택자 {
+            line-height: normal | px | em | %
+        }
+    </pre>
+
+    <!--(h4+p>lorem)*3-->
+    <h4>px 고정단위 간격</h4>
+    <p style="line-height: 30px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque deserunt laboriosam odit aliquam maxime reprehenderit, quis repellat, modi eum facilis pariatur suscipit aperiam blanditiis fugiat tenetur omnis id magni explicabo?</p>
+
+    <h4>em 가변 단위 간격</h4>
+    <p style="line-height: 3em">Vitae a praesentium dolore magni? Ipsa modi rem enim fuga voluptatibus eveniet recusandae magnam? Nulla cupiditate eum inventore reprehenderit ullam repudiandae adipisci sit? Omnis fugit, alias ab dolor aspernatur ad.</p>
+
+    <h4>% 배율 단위 간격</h4>
+    <p style="line-height: 200%">Possimus doloremque distinctio ea natus sed maiores voluptatem, debitis et quisquam enim vitae tempore nesciunt libero aspernatur nulla beatae quam modi saepe accusantium fugiat dolores harum cum eaque expedita. Praesentium!</p>
+
+
+</body>
+</html>
