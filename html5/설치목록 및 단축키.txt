@@ -1,0 +1,12 @@
+확장 설치 목록
+- open in browser : alt+b => html문서를 브라우저로 열기 
+- quick html previewer : ctrl+q s => 우측화면에서 미리보기
+- html tag wrap : 글자 블럭잡고 alt+w => 글자에 자동으로 태그넣기
+- auto rename tag : 여는태그명을 바꾸는 닫는태그를 자동으로 바꾸어줌
+
+- Live server : alt+l alt+o => 저장하면 새로고침하지 않아도 브라우저에서 바로 적용
+- image preview : 왼쪽 줄번호측에 작게 이미지 미리보기
+
+유용한 단축키
+- ctrl+k o : 별도의 브라우저로로 열기
+- alt+shift+f : 코드 정렬

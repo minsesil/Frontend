@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하이퍼링크 태그</title>
+</head>
+<body>
+    <!--
+        하이퍼링크 기능은 웹 문서의 가장 핵심적인 기능
+        클릭을 통해 연결된 곳으로 이동하며 사용이 편리한 기능
+        텍스트를 클릭하여 링크로 이동하는 방법,
+        이미지를 클릭하여 링크로 이동하는 방법,
+        현재 페이지 내에서 링크로 이동할 수 있음
+    -->
+    <h1>하이퍼링크 관련 태그</h1>
+    <!--a태그의 href속성으로 링크를 만들 수 있음-->
+    <!--ul>(li>a)*3-->
+    <ul>
+        <li><a href="02.글씨관련태그.html">글자관련태그</a></li>
+        <li><a href="03.목록관련태그.html">목록관련태그</a></li>
+        <li><a href="06.멀티미디어관련태그.html">멀티미디어관련태그</a></li>
+        <li><a href="https://naver.com">네이버</a></li>       
+    </ul>
+ 
+    <h3>* target 속성 : 연결된 페이지를 어느탭에서 열것인지 지정</h3>
+    <p>_self(기본값) : 현재 열려있는 창에 열림
+       _black : 새 탭에 열림
+    </p>
+
+    <a href="https://google.com">구글사이트(현재 탭에서)</a><br>
+    <a href="https://daum.net" target="_blank">다음사이트(새 탭에서)</a>
+    
+    <h3>* 이미지에 링크 만들기</h3>
+    <a href="https://github.com/zzangu42/HTML5" target="_blank">
+        <img src="resources/img/img3.jpg" width="300" height="120">
+    </a>
+
+    <h3>* 한 페이지 내에서 점프하는 링크 만들기</h3>
+
+    <h4 id="main">바로가기</h4>
+    <!--ul(li>a{본문$})*4-->
+    <ul>
+      <li><a href="#cont1">본문1</a></li>
+      <li><a href="#cont2">본문2</a></li>
+      <li><a href="#cont3">본문3</a></li>
+      <li><a href="#cont4">본문4</a></li>
+    </ul>
+
+    <h4 id="cont1">본문1</h4>
+    <!--p>lorem*5-->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, nobis, distinctio voluptatum voluptatem, saepe itaque illo minima minus sunt ratione ut id quod eum commodi sint maiores temporibus in quidem.</p>
+    <p>Laudantium, non. Esse quo laudantium cumque sed dolore temporibus quos. Velit nihil neque omnis, optio itaque ipsa in non dolorem sint ea doloremque culpa ex rerum assumenda fuga reiciendis nisi.</p>
+    <p>Quibusdam doloremque officia eligendi laborum excepturi perferendis, dolor provident veritatis sed ea sit molestias libero, eius et deleniti? Laboriosam ducimus dolorum facere architecto culpa odit quia ratione dolor? Repellat, voluptatum?</p>
+    <p>Perferendis optio consectetur est rerum! Eum ipsa numquam hic eius est eos delectus fugiat, et corporis distinctio natus. Officiis molestias distinctio molestiae iste. Vero distinctio explicabo voluptatum id eos quibusdam.</p>
+   
+    <h4 id="cont2">본문2</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, nobis, distinctio voluptatum voluptatem, saepe itaque illo minima minus sunt ratione ut id quod eum commodi sint maiores temporibus in quidem.</p>
+    <p>Laudantium, non. Esse quo laudantium cumque sed dolore temporibus quos. Velit nihil neque omnis, optio itaque ipsa in non dolorem sint ea doloremque culpa ex rerum assumenda fuga reiciendis nisi.</p>
+    <p>Quibusdam doloremque officia eligendi laborum excepturi perferendis, dolor provident veritatis sed ea sit molestias libero, eius et deleniti? Laboriosam ducimus dolorum facere architecto culpa odit quia ratione dolor? Repellat, voluptatum?</p>
+    <p>Perferendis optio consectetur est rerum! Eum ipsa numquam hic eius est eos delectus fugiat, et corporis distinctio natus. Officiis molestias distinctio molestiae iste. Vero distinctio explicabo voluptatum id eos quibusdam.</p>
+    <p>Harum quo beatae veniam voluptate officiis repudiandae voluptatem deserunt repellat laboriosam ratione! Aut, fugit earum neque quasi magni id cumque sunt? Minima animi aperiam tenetur, praesentium hic odio aliquid debitis!</p>
+
+    <h4 id="cont3">본문3</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, nobis, distinctio voluptatum voluptatem, saepe itaque illo minima minus sunt ratione ut id quod eum commodi sint maiores temporibus in quidem.</p>
+    <p>Laudantium, non. Esse quo laudantium cumque sed dolore temporibus quos. Velit nihil neque omnis, optio itaque ipsa in non dolorem sint ea doloremque culpa ex rerum assumenda fuga reiciendis nisi.</p>
+    <p>Quibusdam doloremque officia eligendi laborum excepturi perferendis, dolor provident veritatis sed ea sit molestias libero, eius et deleniti? Laboriosam ducimus dolorum facere architecto culpa odit quia ratione dolor? Repellat, voluptatum?</p>
+    <p>Perferendis optio consectetur est rerum! Eum ipsa numquam hic eius est eos delectus fugiat, et corporis distinctio natus. Officiis molestias distinctio molestiae iste. Vero distinctio explicabo voluptatum id eos quibusdam.</p>
+    <p>Harum quo beatae veniam voluptate officiis repudiandae voluptatem deserunt repellat laboriosam ratione! Aut, fugit earum neque quasi magni id cumque sunt? Minima animi aperiam tenetur, praesentium hic odio aliquid debitis!</p>
+
+    <h4 id="cont4">본문4</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, nobis, distinctio voluptatum voluptatem, saepe itaque illo minima minus sunt ratione ut id quod eum commodi sint maiores temporibus in quidem.</p>
+    <p>Laudantium, non. Esse quo laudantium cumque sed dolore temporibus quos. Velit nihil neque omnis, optio itaque ipsa in non dolorem sint ea doloremque culpa ex rerum assumenda fuga reiciendis nisi.</p>
+    <p>Quibusdam doloremque officia eligendi laborum excepturi perferendis, dolor provident veritatis sed ea sit molestias libero, eius et deleniti? Laboriosam ducimus dolorum facere architecto culpa odit quia ratione dolor? Repellat, voluptatum?</p>
+    <p>Perferendis optio consectetur est rerum! Eum ipsa numquam hic eius est eos delectus fugiat, et corporis distinctio natus. Officiis molestias distinctio molestiae iste. Vero distinctio explicabo voluptatum id eos quibusdam.</p>
+    <p>Harum quo beatae veniam voluptate officiis repudiandae voluptatem deserunt repellat laboriosam ratione! Aut, fugit earum neque quasi magni id cumque sunt? Minima animi aperiam tenetur, praesentium hic odio aliquid debitis!</p>
+
+    <br><br>
+    <a href="#main">바로가기로 올라가기</a><br>
+    <a href="#top">맨위로</a><!--id를 만들지 않아도 html에서 제공-->
+    <br><br>
+
+
+   
+</body>
+</html>

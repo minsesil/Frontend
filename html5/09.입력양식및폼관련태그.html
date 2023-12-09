@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력양식 및 폼관련태그</title>
+</head>
+<body>
+    <h1>입력양식 관련 태그</h1>
+
+    <h2>input태그</h2>
+    <p>사용자로부터 값을 입력받을 수 있는 텍스트 상자 및 체크박스, 라디오버트 등을 만들 수 있음</p>
+    
+    아이디 : <input type="text"><br>
+    비밀번호 : <input type="text"><br>
+    성별 : <input type="radio">남 &emsp;<input type="radio">여<br>
+    <input type = "submit">
+
+    <h1>폼 관련 태그</h1>
+    <p>
+        form태그 내에 submit버튼 클릭시 해당 form안의 작성된<br>
+        사용자가 입력한 값들을 서버로 전송하면서 요청하는 역할 수행<br><br>
+
+        form action="" method=""  <br><br>
+
+        * action 속성 : 해당 form에 사용자가 입력한 값을 전달하면서 요청한 서버의 경로 제시
+        * method 속성 : 요청 전송 방식을 지정하는 속성(get(기본값)|post)<br>
+          > get 방식: 요청시 사용자가 입력한 값들이 url에 노출되는 방식<br>
+          > post 방식 : 요청시 사용자가 입력한 값들이 url에 노출되지 않는 방식<br>
+
+        form내의 submit버튼 클릭시 action 지정한 서버로 사용자가 입력한 값들이<br>
+        넘어가면서 요청됨(사용자가 넣은 값은 key=value 세트로 전달)
+    </p>
+
+    <form action="search.jsp"><!--method의 기본값 get(생략시 method="get")-->
+        검색어 : <input name="keyword"><!--type의 기본값 text(생략시 input type="text")-->
+        <input type="submit">
+    </form>
+
+    <h3>fieldset : 그룹을 묶는 태그(기본적인 테두리 존재)</h3>
+    <h3>legend : 해당그룹의 제목을 붙이는 태그</h3>
+
+    <form action="test.jsp">
+        <fieldset>
+            <legend>제목1</legend>
+            입력1 : <input name="text1"><br>
+            입력2 : <input name="text2"><br>
+        </fieldset>
+
+        <fieldset>
+         <legend>큰제목</legend>
+            <fieldset>
+                <legend>제목2</legend>
+                입력3 : <input name="text3"><br>
+                입력4 : <input name="text4"><br>
+            </fieldset>
+            <fieldset>
+                <legend>제목3</legend>
+                입력5 : <input name="text5"><br>
+                입력6 : <input name="text6"><br>
+            </fieldset>
+
+        </fieldset>
+        <br>
+        <input type="submit">
+    </form>
+
+    <hr>
+
+    <h3>text와 관련된 input 태그의 타입</h3>
+
+    <form action="test.jsp">
+        <h3>type="text"</h3>
+        <p>- 한줄짜리 텍스트를 입력할수 있는 텍스트상자(기본값)</p>
+        아이디 : <input name="userId" placeholder="userid@edu.ac.kr" maxlength="20">
+
+        <br><br>
+
+        <h3>type="password"</h3>
+        <p>- 비밀번호를 입력할 수 있는 텍스트 상자</p>
+        비밀번호 : <input type="password" name="pw" placeholder="영문,숫자,특수문자로만 7글자 이상">
+
+        <h3>type="search | url | email | tel</h3>
+        <p>- 겉모습은 일반 텍스트 상자와 유사하지만 각각의 정보에 맞게 세분화된 기능 제공</p>
+        검색 : <input type ="search" name="q"><!--글씨 옆에 x 표시가 됨-->
+
+        <br><br>
+
+        홈페이지 : <input type="url" name="homepage"><!--http://로 시작하는지 체크-->
+
+        <br><br>
+
+        이메일 : <input type="email" name="userEmail"><!--@이 포함되어 있는지 체크-->
+
+        <br><br>
+
+        tel : <input type="tel" name="userTel"><!--이 페이지에서는 체크안함 서버에서 받았을때 입력한 문자가 전화번호라고 인식-->
+
+        <br><br>
+
+        <input type="submit">
+    </form>
+
+    <hr>
+
+    <h2>textarea 태그</h2>
+    <p>- 텍스트 상자로 여러줄 입력할 수 있음</p>
+    <form action ="test.jsp" method="post">
+        <fieldset>
+            <legend>글작성</legend>
+            제목 : <input name="title" size="32"><br>
+            내용 : <textarea name="content" cols="35" rows="10"></textarea>
+        </fieldset>
+        <br>
+        <input type="submit" value="작성하기">
+    </form>
+
+    <hr>
+
+    <h2>숫자와 관련된 input태그의 타입</h2>
+    <form action="test.jsp">
+        <h3>type="number"</h3>
+        <p>
+            - 숫자값만 작성가능한 텍스트상자<br>
+            - 스핀박스가 표시됨
+        </p>
+
+        수량 : <input type="number" name="amount" min="0" max="100" value="100" step="5">
+        <br><br>
+
+        <h3>type="range"</h3>
+        <p>- 슬라이드바를 통한 숫자 지정 가능</p>
+
+        점수 : <input type="range" name="score" min="0" max="100" step="10">
+        <br><br>
+
+        <input type="submit">
+    </form>
+
+    <h2>날짜 및 시간과 관련된 타입</h2>
+    <form action="test.jsp">
+        <h3>type="date" | month | week | datetime-local"</h3>
+
+        date : <input type="date" name="dateIn">
+        <!--연도,월,일 입력받을수 있는 텍스트 상자-->
+        <br><br>
+
+        month : <input type="month" name="monthIn">
+        <!--연도,월을 입력받을수 있는 텍스트 상자-->
+        <br><br>
+
+        week : <input type="week" name="weekIn">
+        <!--해당 년도에 몇번째 주인지 입력받을수 있는 텍스트 상자-->
+        <br><br>
+
+        time : <input type="time" name="timeIn">
+        <!--오전|오후 시 분 입력받을수 있는 텍스트 상자-->
+        <br><br>
+
+        datetime-local : <input type="datetime-local" name="diIn">
+        <!--연도,월,일 오전|오후 시 분 입력받을수 있는 텍스트 상자-->
+        <br><br>
+
+        <input type="submit">
+        <input type="reset">
+    </form>
+
+    <hr>
+
+    <h2>라디오 버튼과 체크박스 관련 태그</h2><!--라디오버튼 중요-->
+    <form action="test.jsp">
+        <h3>라디오버튼(type="radio")</h3>
+        <p>
+            - 여러개 값들 중 오로지 한개만 선택가능<br>
+            - 서버로 value 값이 전송<br>
+            - <mark>name 속성의 값이 같아야 한개만 선택할수 있음(중요)</mark><!--name이 같으면 하나의 그룹으로 인식해서 하나만 선택가능-->
+        </p>
+        <fieldset>
+        성별 : 
+        <input type="radio" name="gender" value="X">선택안함&emsp;
+        <input type="radio" name="gender" value="M">남자&emsp;
+        <input type="radio" name="gender" value="F">여자&emsp;   
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+        성별2 : 
+        <input type="radio" name="gender2" value="X">선택안함&emsp;
+        <input type="radio" name="gender2" value="M">남자&emsp;
+        <input type="radio" name="gender2" value="F">여자&emsp;     
+        </fieldset>
+
+        <input type="submit">
+    </form>
+
+    <br><br>
+
+    <form action="test.jsp">
+        <h3>체크박스(type="checkbox")</h3>
+        <p>
+            - 제시한 여러개의 값들 중 여러개를 선택할 수 있음
+            - 서버로 value의 값이 전송됨
+        </p>
+
+        취미 :<br>
+        <input type="checkbox" name="hobby" value="html5">html5공부하기
+        <input type="checkbox" name="hobby" value="java">java공부하기
+        <input type="checkbox" name="hobby" value="oracle">oracle공부하기
+        <input type="checkbox" name="hobby" value="css">css공부하기
+        <input type="checkbox" name="hobby" value="springboot">springboot공부하기
+        <input type="checkbox" name="hobby" value="mybatis">mybatis공부하기
+        <br>
+        <input type="submit">
+    </form>
+
+    <hr>
+
+    <h2>추가적인 input 태그 타입</h2>
+    <form action="test.jsp">
+        <h3>type="color"</h3>
+        <p>- 색상을 선택할 수 있는 input 타입</p>
+        색상선택 : <input type="color" name="color">
+        <br>
+
+        <h3> type="file"</h3>
+        <p> - 첨부하고자 하는 파일을 선택할 수 있는 input 타입</p>
+        첨부파일 : <input type="file" name="uploadfile">
+        <br>
+
+        <h3>type="submit | reset | button</h3>
+        <input type="submit"><!--이 버튼이 들어있는 form의 모든 값들을 서버로 전송-->
+        <input type="reset"><!--이 버튼이 들어있는 form의 모든 값들을 초기화-->
+        <input type="button" value="일반버튼"><!--일반커튼 : 사용자정의로 하고 싶을때-->
+
+        <h3>button[type="submit|reset|button"]</h3>
+        <button type="submit">제출</button><!--button type의 기본값=submit-->
+        <button type="reset">초기화</button>
+        <button type="button">일반버튼</button>
+        <br>
+        <button>type을 생략하면 submit버튼</button>
+    </form>
+
+    <hr>
+
+    <h2>select 태그와 option 태그</h2>
+    <p>
+        - 사용자에게 직접 키보드로 입력받는것이 아니라 내가 제시한 옵션들중에서 선택할수 있는 태그
+        - 제출시 현재 선택된(selected)된 option 값이 넘어감
+    </p>
+    <form action="test.jpg">
+        국적 :
+        <select name="national">
+            <option value="ko">한국</option>
+            <option value="us" selected>미국</option>
+            <option value="eu">영국</option>
+            <option value="ru">러시아</option>
+            <option value="etc">기타</option>
+        </select>
+
+        <br><br>
+
+        메뉴선택 :
+        <select name="menu" multiple><!--여러개선택(ctrl)-->
+            <option value="김치찌게">김치찌게</option>
+            <option value="된장찌게" selected>된장찌게</option>
+            <option value="랍스타">랍스타</option>
+            <option value="김밥">김밥</option>
+            <option value="자장면">자장면</option>
+        </select>
+
+        <br><br>
+
+        수강신청
+        <select>
+            <optgroup label = "공과대학">
+                    <option value="archi">건축공학과</option>
+                    <option value="mechanic">기계공학과</option>
+                    <option value="indust">산업공학과</option>
+                    <option value="elec">전기전자공학과</option>
+                    <option value="computer">컴퓨터공학과</option>
+                    <option value="chemical">화학공학과</option>
+            </optgroup>
+            <optgroup label = "인문대학">
+                <option value="history">사학과</option>
+                <option value="lang">어문학과</option>
+                <option value="philo">철학과</option>
+            </optgroup>
+        </select>
+
+
+        <h3>html5에서 새로 추가된 기능 datalist</h3>
+        <p>
+            - 내가 제시한 목록들 중에서 선택할 수도 있고, 만약 목록에 없다면 직접 입력가능
+        </p>
+        제일 가고싶은 여행지 :
+        <input type="text" name="color" list="colorList">
+        <datalist id="colorList">
+            <option value="ko">한국</option>
+            <option value="us">미국</option>
+            <option value="eu">영국</option>
+        </datalist>
+      
+    </form>
+
+
+</body>
+</html>
