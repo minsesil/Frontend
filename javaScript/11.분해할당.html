@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>분해할당</title>
+</head>
+<body>
+<h1>분해 할당</h1>
+<p>- 배열의 객체에 들어있는 속성값들을 각각의 변수애 할당</p>
+
+<h4>콘솔로 확인</h4>
+<script>
+    (function() {
+        /*
+        (구조)분해 할당 종류
+        1. 배열의 분해 할당
+        2. 객체의 분해 할당
+        */
+
+        // 1. 배열의 분해 할당
+        // ess에서의 분해할당 방법
+        const points = [20, 30, 40];
+        const x1 = points[0];
+        const y1 = points[1];
+        const z1 = points[2];
+        console.log(`ES5 : x1=${x1}, y=${y1}, z=${z1}`);
+
+        // ES6에서의 분해 할당 방법
+        const [x2, y2, z2] = points;
+        console.log(`ES6 : x=${x2}, y=${y2}, z=${z2}`);
+
+        // 두번째 값 무시하기
+        const [x3, , z3] = points;
+        console.log(`ES6 : x=${x3}, z=${z3}`);
+
+        // 두번째 세번째 값 무시
+        const [x4,,,w4] = points;
+        console.log(`ES6 : x=${x4}, w=${w4}`);
+
+        const [x5,,] = points;
+        console.log(`ES6 : x=${x5}`);
+
+        // rest연산자(...) : 여려개의 인자값 (배열로 들어옴)
+        const [x6, x7, ...rest] = [10,20,30,40,50,60,70];
+        console.log(`ES6 rest : [0]=${x6}, [1]=${x7}, rest=${rest}`);
+
+        }) ();
+
+    /* 2. 객체의 분해 할당 */
+    const car = {
+        company : '삼성',
+        color : "black",
+        model : "SM7"
+    }
+
+    //ES5에서의 분해할당
+    const company1 = car.company;
+    const color1 = car.color;
+    const model1 = car.model;
+    console.log(`ES5 : company=${company1}, color=${color1}, model=${model1}`);
+
+    //ES6에서의 분해할당
+    const {company, color, model} = car;
+    console.log(`ES5 : company=${company}, color=${color}, model=${model}`);
+
+    const {company:company2, color:color2, model:model2} = car;
+    console.log(`ES5 : company=${company2}, color=${color2}, model=${model2}`);
+
+    const fun1 = function(car) {
+        const {company, color} = car;
+        console.log(`fun1 : company=${company2}, color=${color}`);
+    }
+    fun1(car);
+
+    const fun2 = ({model,company}) => {
+        console.log(`fun2 : model=${model}, company=${company}`);
+    }
+    fun2(car);
+
+
+    </script>
+
+
+</body>
+</html>
