@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수와 자료형</title>
+  <style>
+    #area {
+      width: 400px;
+      border: 1px solid;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+    <h1>변수와 자료형</h1>
+    <h2>변수 선언시 var뿐만 아니라 let, const를 이용하여 선언 가능</h2>
+
+    <h3>* var, let, cons의 차이점</h3>
+
+    <h4>1) 변수 선언 방법</h4>
+    <button onclick="diffDeclare();">변수 선언 방법</button>
+
+    <h4>2) 스코프(사용가능한 범위)</h4>
+    <button onclick="diffScope();">스코프(사용가능한 범위)</button>
+
+    <script>
+      function diffDeclare() {
+        // 1) var은 중복선언 가능(단점), 재할당 가능
+        var userId = "user01";
+        console.log(userId);
+
+        var userId = "user02";  // 중복선언 가능
+        console.log(userId);
+
+        userId = "user03";    // 재할당
+        console.log(userId);
+        console.log("------------------");
+
+        // 2) let은 중복선언 불가능, 재할당 가능
+        let userPwd = "pass01";
+        console.log(userPwd);
+
+        // let userPwd = "pass02";  중복선언 불가능
+
+        userPwd = "pass02";   // 재할당 가능
+        console.log(userPwd);
+        console.log("------------------");
+
+        // 3) const는 중복선언 불가능, 재할당 불가능(상수같은 개념 == 한번 초기화하면 값 변경 불가)
+        const userName = "홍길동";
+        console.log(userName);
+
+        // const userName = "홍길동";
+
+        // userName = "김길순";  // 재할당 안됨
+        // console.log(userName);
+
+        /*
+        var은 자유롭게 변수선언, 사용할 수 있다는 장점이 있지만
+        중복된 변수가 남발할 수 있고 의도치 않게 값이 변경되어있을 수 있음 => 가장 큰 단점
+        --> 보완되서 나온것이 let, const임
+
+        권장사항 : let, const 위주로 사용
+        */
+        console.log("=========================");
+      }
+      function diffScope() {
+        // 1) var : 변수가 선언된 "함수 영역" 내에서 사용가능
+        // var name = "홍길동";
+        //console.log(name);
+
+        if(true) {
+          var name = "이길동";
+          console.log(name);
+        }
+        console.log(name);
+
+        for(var i=0; i<4; i++) {
+          console.log(name);
+        }
+        console.log("i=" + i);
+        console.log("------------------");
+
+        // 2) let, const : 변수가 선언된 '블럭{}' 내에서만 사용 가능(자바 유사)
+        if(true) {
+          let hobby = "운동";
+          const gender = "M";
+        }
+        console.log(hobby);   // 사용 불가능
+        console.log(gender);  // 사용 불가능
+      }
+    </script>
+
+    <h3>* 변수 선언 위치에 따른 전역변수 / 지역변수</h3>
+    
+    <script>
+      // window.onload는 해당 문서가 로딩이 다 된후에 바로 실행시킬 코드
+
+      // window.onload = function() {
+      //   console.log("문서로딩완료");
+      // }
+
+      // 특정 함수영역 밖에 선언되 변수는 전역변수 임(어디든 사용가능)
+      var declareVar = "var로 전역변수";
+      let declareLet = "let로 전역변수";
+      const declareConst = "const로 전역변수";
+
+      // declareNone = "그냥 전역변수"; // 변수명 앞에 아무런 키워드가 없으면 전역변수가 됨
+
+      window.onload = function() {
+        /* 
+        console.log(declareVar);
+        console.log(declareLet);
+        console.log(declareConst);
+        console.log(declareNone);
+        console.log("------------------");
+        */
+        
+        // 지역변수 선언
+        // 기본적으로 지역변수명과 전역변수명이 같은 경우 : 지역변수가 우선순위가 높음
+        var declareVar = "var로 지역변수";
+        let declareLet = "let로 지역변수";
+        const declareConst = "const로 지역변수";
+        console.log(declareVar);
+        console.log(declareLet);
+        console.log(declareConst);
+        console.log("------------------");
+
+        // 전역변수에 접근하려면 => window. 또는 this. 로 접근가능 단, var로 선언한 것만 가능
+        console.log(window.declareVar);
+        console.log(this.declareVar);
+
+        // let, const같은 경우 안됨 => undefind
+        console.log(window.declareLet);
+        console.log(this.declareConst);
+        console.log("------------------");
+
+        // 변수명 앞에 아무런 키워드가 없으면 무조건 전역변수
+        declareNone = "얘는 뭘까요?";
+        console.log("지역변수로 출력 : " + declareNone);
+        console.log("전역변수로 출력 : " + this.declareNone);
+        test();
+      }
+
+      function test() {
+        console.log(declareNone);
+      }
+    </script>
+
+    <hr>
+
+    <h3>* 자료형</h3>
+    <p>
+      Dynamic Typing : 변수 선언시 자료형을 별도로 지정하지 않음(자료형의 개념이 없는건 아님)<br>
+      => 변수별로 타입이 지정되지 않고, 대입되는 값에 따라 타입이 결정됨
+    </p>
+
+    <h4>자바스크립트의 자료형</h4>
+    <ul>
+      <li>string(문자열)</li>
+      <li>number(숫자)</li>
+      <li>boolean(논리값)</li>
+      <li>object(객체)</li>
+      <li>function(함수)</li>
+      <li>undefind(정의되지 않은 변수)</li>
+    </ul>
+
+    <button onclick="typeTest();">자료형테스트</button>
+    <div id="area"></div>
+    <script>
+      function typeTest() {
+        const name = "홍길동";
+        const age = 20;
+        const bool = false;
+        const hobby = ["영화", "js공부", "잠자기"];
+        const divE1 = document.querySelector("#area");
+                   // document.getElementById("area");
+        const user = {
+          name : "애드인에듀",
+          age : 27,
+          id : "addinedu"
+        };
+
+        const testFn = function() {
+          alert("함수호출");
+        }
+        let noval;
+
+        console.log("============================");
+        console.log(typeof name, name);
+        console.log(typeof age, age);
+        console.log(typeof bool, bool);
+        console.log(typeof hobby, hobby);
+        console.log(typeof divE1, divE1);
+        console.log(typeof user, user);
+        console.log(typeof testFn, testFn);
+        console.log(typeof noval, noval);
+
+        // 백틱(ES6) 사용시 \n을 사용하지 않아도 줄바꿈이 들어감
+        // 백틱 안에 달러기호 ${} 를 사용하면 변수나 표현식을 표현할 수 있음
+        const name2 = `Hello ${name}`;
+        console.log(name2);
+
+        // 화면에 출력시(텍스트로 출력되지 때문에 콘솔과 다르게 보일수 있음)
+        divE1.innerHTML = typeof name + ", " + name + "<br>";
+        divE1.innerHTML = `${typeof name}, ${name}<br>`;
+        divE1.innerHTML += `${typeof age}, ${age}<br>`;
+        divE1.innerHTML += `${typeof bool}, ${bool}<br>`;
+        divE1.innerHTML += `${typeof hobby}, ${hobby}<br>`;
+        divE1.innerHTML += `${typeof divE1}, ${divE1}<br>`;
+        divE1.innerHTML += `${typeof user}, ${user}<br>`;
+        divE1.innerHTML += `${typeof testFn}, ${testFn}<br>`;
+        divE1.innerHTML += `${typeof noval}, ${noval}<br>`;
+      }
+    </script>
+</body>
+</html>
