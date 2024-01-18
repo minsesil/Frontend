@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    이름 : <input id="userName">
+
+<button onclick="inputtest();">실행확인</button>
+<div id="area1" class="area"></div>
+
+<script>
+    function inputtest() {
+
+        const area1 = document.getElementById("area1")
+        const name = document.getElementById("userName").value
+        
+        area1.innerHTML += name;
+
+    }
+</script>
+</body>
+</html>
