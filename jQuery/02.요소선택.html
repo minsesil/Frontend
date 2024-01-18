@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>요소선택</title>
+</head>
+<body>
+    <h1>기본선택자를 이용하여 요소 선택</h1>
+
+    <h3>* 아이디 선택자</h3>
+    <p>특정 고유한 아이디값을 가진 요소 "하나만" 선택하고자 할 때</p>
+
+    <h1 id="id1">테스트1</h1>  <!--자바스크립트 방식-->
+    <h2 id="id2">테스트1</h2>  <!--jQuery 방식-->
+
+    <script>
+        $(() => {
+        
+        //자바스크립트 방식
+        document.getElementById("id1").style.color = "red";
+        document.getElementById("id1").innerHTML = "h1글자변경"
+
+        //jQuery 방식
+        /*
+        $("#아이디명")
+        .css() :
+        .html() : 선택된 요소의 innerHTML과 관련된 기능을 수행하는 메소드
+        */
+       $('#id2').css('color', 'green');
+       $('#id2').html('h2 변경');
+
+       console.log(document.getElementById("id1")); //자바스크립트
+       console.log($('#id2')); //jquery
+    
+       })
+    </script>
+
+    <hr>
+
+    <h3>* 태그 선택자</h3>
+
+    <p>java</p>
+    <p>oracle</p>
+    <p>HTML</p>
+
+    <h5>내용1</h5>
+    <h5>내용2</h5>
+    <h5>내용3</h5>
+
+    <script>
+        $(() => {
+            /*
+            const p = document.getElementsByTagName('p');
+            for(let i in p)
+            p[i].style.color = 'pink';
+            }
+            */
+
+            //jQuery
+            $('h5').css('color','blue');
+            //$('h5, p, #test').css('color','yellowgreen');
+        })
+    </script>
+
+    <hr>
+
+    <h3>* 클래스 선택자</h3>
+    <p>클래스 속성을 가진 요소를 선택하고자 할 때</p>
+
+    <h4 class="item">Class1</h4>
+    <h4 class="item select">Class2</h4>
+    <h4 class="item select">Class3</h4>
+
+    <script>
+        $(()=>{
+            $('.select').css('backgroundColor','hotpink');
+            $('.select').click(()=>{alert("클릭됨");})
+
+            // const items = document.getElementsByClassName('item');
+            // for(let i in items) {
+            //     items[i].style.color='green';
+            //     item[i].onclick = function() {
+            //         colsole.log('클릭됨');
+            //     }
+            // }
+        })
+    </script>
+
+</body>
+</html>
