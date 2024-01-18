@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>영역(content)관련 메소드</title>
+    <style>
+        .wrap, .wrap * {
+            border: 1px solid lightgray;
+            color: gray;
+            display: block;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Content(innerHTML, innerTEXT) 관련 메소드</h1>
+
+    <h3>* html(['문구']) : innerHTML 속성과 관련된 메소드</h3>
+
+    <p>
+        선택된 요소의 content영역의 값을 리턴해주거나 또는 변경해주는 메소드
+        > $('선택자').html() : 선택된 요소의 content영역의 값을 반환(html 태그까지 포함)
+        > $('선택자').html('문구') : 선택된 요소의 content 영역값을 해당 문구로 변경(html 태그가 존재하면 태그로써 해석)
+    </p>
+
+    <h1 id="test1">
+        <a>네이버로</a>
+    </h1>
+
+    <h1 id="test2">
+    
+    </h1>
+
+    <script>
+        $(()=>{
+            const tmp = $('#test1').html();
+            console.log(tmp);
+
+            $('#test2').html(tmp);
+            $('#test').children().attr('href','https://www.naver.com')
+        })
+    </script>
+
+    <h3>* text(['문구']) 메소드 : innerTEXT 속성과 관련된 메소드</h3>
+    <p>
+        선택된 요소의 content영역의 값을 리턴해주거나 또는 변경해주는 메ㅔ소드<br>
+        > $('선택자').text() : 선택된 요소의 content 영역의 텍스트를 반환<br>
+        > $('선택자').text('문구') : 선택된 요소의 content 영역의 값을 '문구'로 변경(태그도 텍스트로)
+    </p>
+
+    <h1 id="test3">
+        <a>구글로</a>
+    </h1>
+
+    <h1 id="test4">
+
+    </h1>
+
+
+    <script>
+        $(()=>{
+            const tmp=$('#test3').text();
+            console.log(tmp);
+
+            $('#test4').text(`<a>${tmp}</a>`);
+        })
+    </script>
+
+
+<hr>
+    
+<div class="test">테스트</div>
+<div class="test">테스트</div>
+<div class="test">테스트</div>
+
+<script>
+    $(()=>{
+        //$('.test').html('<h1>글자 변경</h1>');
+
+        //콜백함수 : 함수 실행 후 반한된 결과값을 가지고 반영(배개변수에 들어가는 함수)
+        //선택된 요소들을 순차적으로 접근할때마다 해당 function 실행
+
+        // let count = 0;
+        // $('.test').html(function() {
+        //     return '<h1>콜백함수로 글자 변경' + count++ + '</h1>';
+        // })
+        
+        $('.test').html(function(index, html){
+            return `<h1>인덱스 : ${index}, content내용: ${html}</h1>`;
+
+        })
+    })
+</script>
+
+         
+
+</body>
+</html>
