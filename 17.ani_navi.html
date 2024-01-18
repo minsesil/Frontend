@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <title>Document</title>
+    <style>
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            background-color: yellowgreen;
+            width: 200px;
+            height: 60px;
+            text-align: center;
+            font: bold 20px verdana;
+            line-height: 60px;
+
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            width: 200px;
+            height: 60px;
+            line-height: 60px;
+        }
+    </style>
+
+    <script>
+        $(()=> {
+            $('li a').hover(function() {
+                let overColor = $(this).attr('data-bg');
+                //console.log(overColor);
+                $(this).stop()
+                        .animate({'background-color': overColor
+                                    ,color:'white'}
+                                    ,1000);
+            }, function() {
+                $(this).stop()
+                        .animate({'background-color': 'orange'
+                        ,color:'black'}
+                        ,1000);
+            })
+        })
+    </script>
+</head>
+<body>
+
+    <!--ul>(li>a)*4-->
+    <ul>
+        <li><a href="" data-bg="3DB7CC">Home</a></li>
+        <li><a href="" data-bg="F361A6">About</a></li>
+        <li><a href="" data-bg="F29661">Portfolio</a></li>
+        <li><a href="" data-bg="E5D85C">Content</a></li>
+    </ul>
+    
+</body>
+</html>
