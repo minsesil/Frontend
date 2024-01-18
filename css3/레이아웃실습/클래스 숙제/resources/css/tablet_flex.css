@@ -1,0 +1,92 @@
+/****** body ******/
+body {
+  width: 100%;
+}
+
+
+/****** header ******/
+header {
+  height: 330px;
+  width: 100%;
+}
+
+#logo {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#login {
+  display: block;
+  margin-left: 35%;
+  margin-bottom: 5px;
+}
+
+#titleImg {
+  width: 100%;
+  height: 260px;
+}
+
+
+/****** navi ******/
+nav {
+/* width: 1000px;  */
+height: 60px; 
+background-color: rgb(10, 34, 80);
+}
+
+nav > a {
+display: inline-block;
+width: 24%;
+height: 60px;
+text-align: center;
+color: white;
+line-height: 60px;
+}
+
+nav > a:hover {
+  color:yellow;
+  text-shadow: -5px -5px 5px  yellow;
+  font-size:large;
+}
+nav > a:active {
+color: orange;
+}
+
+
+/****** contents ******/
+section {
+margin: 50px;
+line-height: 40px;
+}
+
+section h4 {
+  color: darkcyan;
+  margin: 10px 0;
+}
+
+
+/****** side ******/
+aside {
+  display: flex;
+  /* justify-content: center;  메인축정렬 */
+}
+
+aside > img {
+  width: 33.3%;
+}
+
+
+/****** footer ******/
+footer {
+  background-color: rgb(36, 82, 121);
+  height: 80px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+footer > p {
+  color: white;
+  padding: 5px 15px;
+  font-size: small;
+}
+
