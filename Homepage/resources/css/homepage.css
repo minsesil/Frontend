@@ -1,0 +1,143 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+* {
+  color: black; 
+  font-family: Gowun Dodum; 
+   margin: 0 auto;
+   font-size:15px;
+}
+    body {
+    background: ivory;
+    width: 1000px;
+    border-style: solid;
+    border-color: rgb(227, 222, 222);
+    margin: 0 auto;  /*또해줘야 가운데로?*/
+    }
+
+
+/****** navi ******/
+
+.logo > img{    /* 로고 */
+  float: left;
+}
+
+.nav > li{      /* 상단메뉴 */
+  float: right;
+  height: 60px;
+  color: black;
+  text-decoration: none;
+
+}
+
+.nav > li > a {
+  
+  width: 246px; 
+  color: black; 
+  text-align: center;
+  line-height: 60px;
+}
+
+.nav > li > a:hover {
+  color:orange;
+  text-shadow: -5px -5px 5px  yellow;
+  font-size:large;
+  display: contents;
+}
+
+.nav > li > a:active {
+  color: orange;
+}
+
+.nav>li>ul>li {
+  background: orange;
+	transition: ease 1s;
+}
+  
+
+.imgslide {    /* 여행사진 */
+  display: flex;
+  flex-wrap: wrap;
+  height: 362px;
+  position: relative;
+  overflow: hidden;  /*다음이미지 숨겨줌*/
+}
+
+.notice {     /* 공지사항 */
+  float:left;
+  margin-top: 30px;
+  padding-left: 20px;
+  line-height: 20px;
+  text-align: center;
+  }
+
+.notice > table {
+border: 1px solid gray;
+border-collapse: collapse;
+}
+
+.notice > table tr > th {
+  background-color: lightgray;
+}
+
+.notice > table tr:ntn-child(2n) {
+  background-color: lightgray;
+}
+
+
+.partner {     /* 정보나눔 */
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  /* justify-content: column; */
+}
+.partner_info>img {
+  width: 100%;
+  height: 60%;
+}
+
+
+.icon {     /* 아이콘3개 */
+    padding: 10px;
+    width: 100%;
+    display:flex;
+}
+
+.imgbtn
+
+
+
+/****** footer ******/
+footer {
+  background-color: rgb(74, 113, 147);
+  height: 200px;
+  color: black;
+  /* padding: 10px; */
+}
+  
+footer > ul > li {
+    float: left;
+    line-height: 180px;
+    list-style: none;   /*점없애기*/
+   
+  }
+
+  footer > ul > li > a:hover {
+    color: orange;
+  }
+
+footer > p {
+  float: right;
+  /* display: flex;
+  flex-wrap: wrap; */
+  color: white;
+  text-align : left;
+  margin-top: 20px;
+  width: 600px;
+  font-size: smaller;
+}
+
+  footer > p > b {
+    color: white;
+  }
+  
+
