@@ -1,0 +1,97 @@
+/****** body ******/
+body {
+   width:1000px;
+}
+ 
+
+/****** header ******/
+header {
+    height: 330px;
+    width: 100%;
+  }
+
+#logo {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+#login {
+    display: block;
+    margin-left: 35%;
+    margin-bottom: 5px;
+}
+
+#titleImg {
+    width: 100%;
+    height: 260px;
+}
+
+
+/****** navi ******/
+  nav {
+  width: 1000px; 
+  height: 60px; 
+  background-color: rgb(10, 34, 80);    
+}
+
+nav > a {
+  display: inline-block; 
+  width: 246px; 
+  color: white; 
+  text-align: center;
+  line-height: 60px;
+}
+
+nav > a:hover {
+  color:yellow;
+  text-shadow: -5px -5px 5px  yellow;
+  font-size:large;
+}
+
+nav > a:active {
+  color: orange;
+}
+  
+  
+/****** contents ******/
+section {
+  background-color: aqua;
+  position: relative;
+  margin-top: 20px;
+  width: 630px;
+  float: left;
+  padding-left: 20px;
+  line-height: 40px;
+  }
+
+section h4 {
+  color: darkcyan;
+  margin: 10px 0; 
+} 
+  
+  
+/****** side ******/
+aside {
+  background-color: aqua;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: column;
+}
+
+aside > img {
+  width: 350px;
+}
+
+  
+/****** footer ******/
+footer {
+  background-color: rgb(36, 82, 121);
+  height: 80px;
+  padding: 20px;
+}
+  
+footer > p {
+  color: white;
+  padding: 5px 15px;
+  font-size: small;
+}
