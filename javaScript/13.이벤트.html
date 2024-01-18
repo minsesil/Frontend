@@ -1,118 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이벤트</title>
-    <style>
-        .area {
-            border: 1px solid;
-            height: 200px;
-        }
-      </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트</title>
+  <style>
+    .area {
+      border: 1px solid;
+      height: 200px;
+    }
+  </style>
 </head>
 <body>
-    <h1>이벤트(event)</h1>
-    <h2>1. 이벤트 모델 종료</h2>
-    <h3>* 이벤트 속성에 핸들러 바인딩</h3>
-    <p>
-        특정 요소객체를 가지고와서 해당 요소의 이벤트 속성에 접근한 후 이벤트 핸들러를 연결하는 방식<br>
-        이벤트 제거 가능
-    </p>
+  <h1>이벤트(event)</h1>
+  <h2>1. 이벤트 모델 종류</h2>
+  <h3>* 이벤트 속성에 핸들러 바인딩</h3>
+  <p>
+    특정 요소객체를 가지고와서 해당 요소의 이벤트 속성에 접근한 후 이벤트핸들러를 연결하는 방식<br>
+    이벤트 제거 가능
+  </p>
 
-    <button id="btn1">실행확인</button>
-    <button id="btn2">실행확인</button>
-    <div id="area1" class="area"></div>
-
-    <script>
-        const area1 = document.getElementById("area1");
-        /*
-        const btn1 = document.getElementById("btn1");
-        btn1.onclick=function() {  //이벤트 핸들러
-
-        }
-        */
-        document.getElementById("btn1").onclick = function() {
-            area1.innerHTML += "btn1이 클릭되었습니다<br>";
-        }
-
-        document.getElementById("btn2").onclick = function() {
-            document.getElementById("btn1").onclick = null;  //이벤트 제거
-            area1.innerHTML += "btn1의 이벤트 제거됨<br>";
-        }
-    </script>
-
-    <h3>* 인라인 이벤트 모델</h3>
-    <p>
-        요소내부에 직접적으로 이벤트 속성을 넣어 실행할 내용을 정의하는 방식<br>
-        주로 script 태그 내에 정의되어 있는 함수를 호출하는 방식을 선호<br>
-    </p>
-
-    <button onclick="document.getElementById('area2').innerHTML += '첫번째버튼클릭<br>';">실행확인</button> <!--너무복잡함-->
-
-    <button onclick="test1();">실행확인</button>
-    <div id="area2" class="area"></div>
-
-    <script>
-        function test1() {
-            document.getElementById("area2").innerHTML += "두번째버튼클릭<br>"
-        }
-    </script>
-
-    <br>
-
-    <h3>* addEventListener에 등록</h3>
-    <p>
-        w3C에서 공식적으로 지정한 이벤트 모델<br>
-    </p>
-
-    <button id="btn3">실행확인</button>
-    <script>
-        const btn3 = document.getElementById("btn3");
-
-        //이벤트 걸고자 하는 요소 객체.addEventListener("이벤트명", 이벤트핸들러);
-        btn3.addEventListener("click", function() {
-            alert("W3C공식 이벤트 핸들러 테스트");
-        });
-
-        //마우스가 버튼요소에 들어올때
-        btn3.addEventListener("mouseenter", function() {
-            btn3.style.backgroundColor = "pink";
-        });
-
-        btn3.addEventListener("mouseout", function() {
-            btn3.style.backgroundColor = "yellow";
-        });
-    </script>
-
-    <hr>
-
-    <h2>2. 현재 이벤트가 발생한 해당 요소 객체에 접근하는 방법</h2>
-    <button id="btn4">이벤트 속성에 핸들러 바인딩</button>
-    <button id="btn5">addEventListener 방식</button>
-    <button onclick="test2();">인라인방식</button>
-    <button onclick="test2(this);">인라인방식2</button>
-
-    <script>
-        // 기본이벤트 방식
-        // function(e) : e => 이벤트 핸들러
-        document.getElementById("btn4").onclick = function(e) {
-            console.log(e);
-            console.log(window.event);
-
-            //현재 이벤트가 발생한 요소객체에 접근하고자 하면
-            console.log(e.target); //쓰긴씀.보통
-            console.log(window.event.target); //잘안씀
-            console.log(this);  //보통
-
-            //현재 이벤트에 동적인 효과
-            e.target.innerHTML = "버튼클릭됨";
-            window.event.target.style.backgroundColor = "red";
-            this.style.color = "white";
-            
-        }
+  <button id="btn1">실행확인</button>
+  <button id="btn2">실행확인</button>
+  <div id="area1" class="area"></div>
+  <script>
+    const area1 = document.getElementById("area1");
     
-    </script>
-    
-</body>
+    /*
+    const btn1 = document.getElementById("btn1");
+    btn1.onclick = function() { // 이벤트 핸들러
+
+    }
+    */
+  
+    document.getElementById("btn1").onclick = function() {
+      area1.innerHTML += "btn1이 클릭되었습니다.<br>";
+    }
+
+    document.getElementById("btn2").onclick = function() {
+      document.getElementById("btn1").onclick = null; // 이벤트 제거
+      area1.innerHTML += "btn1의 이벤트가 제거됨<br>";
+    }
+  </script>
+
+  <h3>* 인라인 이벤트 모델</h3>
+  <p>
+    요소내부에 직접적으로 이벤트 속성 넣어 실행할 내용을 정의하는 방식<br>
+    주로 script태그 내에 정의되어 있는 함수 호출하는 방식 선호<br>
+  </p>
+
+  <button onclick="document.getElementById('area2').innerHTML+='첫번째 버튼 클릭<br>';">실행확인</button>
+  <button onclick="test1();">실행확인</button>
+  <div id="area2" class="area"></div>
+
+  <script>
+    function test1() {
+      document.getElementById("area2").innerHTML += "두번째 버튼 클릭<br>";
+    }
+  </script>
+
+  <br>
+
+  <h3>* addEventListener에 등록</h3>
+  <p>
+    W3C에서 공식적으로 지정한 이벤트 모델<br>
+  </p>
+
+  <button id="btn3">실행확인</button>
+  <script>
+    const btn3 = document.getElementById("btn3");
+
+    // 이벤트 걸고자하는 요소 객체.addEventListener("이벤트명", 이벤트핸들러);
+    btn3.addEventListener("click", function() {
+      alert("W3C공식 이벤트 핸들러 테스트");
+    });
+
+    // 마우스가 버튼요소에 들어올때
+    btn3.addEventListener("mouseenter", function() {
+      btn3.style.backgroundColor = "pink";
+    });
+
+    btn3.addEventListener("mouseout", function() {
+      btn3.style.backgroundColor = "";
+    })
+  </script>
+
+  <hr>
+
+  <h2>2. 현재 이벤트가 발생한 해당 요소객체에 접근하는 방법</h2>
+  <button id="btn4">이벤트 속성에 핸들러 바인딩</button>
+  <button id="btn5">addEventListener 방식</button>
+  <button onclick="test2();">인라인방식</button>
+  <button onclick="test3(this);">인라인방식2</button>
+
+  <script>
+    // * 기본이벤트 방식
+    // function(e) : e => 이벤트 핸들러
+    document.getElementById("btn4").onclick = function(e) {
+      console.log(e);
+      console.log(window.event);
+
+      // 현재 이벤트가 발생한 요소객체에 접근하고자 하면
+      console.log(e.target);
+      console.log(window.event.target);
+      console.log(this);
+
+      // 현재 이벤트에 동적인 효과
+      e.target.innerHTML = "버튼클릭됨";
+      window.event.target.style.backgroundColor = "red";
+      this.style.color = "white";
+    }
+
+    // * addEventListener 방식
+    document.getElementById("btn5").addEventListener("click", function(e){
+      console.log(e.target);
+      console.log(window.event.target)
+      console.log(this);
+    });
+
+    // * 인라인 방식
+    function test2(e) {
+      // console.log(e.target);  // 호출시 매개변수를 전달하지 않아서 사용 불가
+      console.log(window.event.target);   //사용가능
+      console.log(this);    // window객체를 가리킴
+
+      window.event.target.innerHTML = "버튼 변경";
+    }
+
+    // * 인라인 방식 매개변수 전달
+    function test3(ev) {
+      console.log(ev.target);
+      console.log(window.event.target);
+      console.log(this);
+
+      ev.style.backgroundColor = "red";
+    }
+  </script>
+
+  <hr>
+
+  <h3>3. 태그별로 기본적으로 가지고 있는 이벤트 제거</h3>
+  <p>
+    기본적으로 이벤트를 가지고 있는 요소<br>
+    - a 태그 : 클릭시 href에 있는 값(url)으로 링크가 들어있음<br>
+    - submit 버튼 : form의 action속성에 있는 값(url)으로 링크가 들어있음<br>
+
+    태그내에 기본적으로 설정되어 있는 이벤트가 실행안되게 하고 싶을 때<br>
+    => 이벤트 핸들러의 return값을 false로 하면 기본 이벤트가 실행 안됨
+  </p>
+
+  <!-- 기본 이벤트보다 다른이벤트가 우선순위가 더 높다 -->
+  <!-- <a href="https://www.naver.com" onclick="alert('이벤트 작성');">네이버로 이동</a> -->
+  <a href="https://www.naver.com" onclick="alert('이벤트 작성'); return false;">네이버로 이동</a>
+  <br>
+
+  <a href="https://google.com" onclick="return test4();">구글로 이동</a>
+  <script>
+    function test4() {
+      alert('알림창');
+      return false;
+    }
+  </script>
+
+  <br><br>
+
+  <form action="12.window객체.html">
+    아이디 : <input name="userId" id="userId"><br>
+    비밀번호 : <input type="password" name="userPw" id="userPw"><br>
+    비밀번호 확인 : <input type="password" name="userRePw" id="userRePw"><br>
+    <input type="submit" onclick="return validate();"><br>
+
+  </form>
+  <script>
+    function validate() {
+      const userPw = document.getElementById("userPw").value;
+      const userRePw = document.getElementById("userRePw").value;
+
+      if(userPw != userRePw) {
+        alert("비밀번호 불일치");
+        return false;
+      }
+    }
+  </script>
+ </body>
 </html>
