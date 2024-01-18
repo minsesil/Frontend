@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>객체메소드</title>
+    <title>객체배열 및 Date</title>
     <style>
         .area {
           border: 1px solid;
@@ -22,11 +22,11 @@
             const area1 = document.getElementById("area1");
 
             const student0 = {name:"홍길동", java:100, oracle:98, html:79, css:60};
-            const student1 = {name:"홍길동", java:120, oracle:97, html:78, css:61};
-            const student2 = {name:"홍길동", java:130, oracle:96, html:77, css:62};
-            const student3 = {name:"홍길동", java:140, oracle:95, html:76, css:63};
+            const student1 = {name:"이길동", java:120, oracle:97, html:78, css:61};
+            const student2 = {name:"김길동", java:130, oracle:96, html:77, css:62};
+            const student3 = {name:"최길동", java:140, oracle:95, html:76, css:63};
 
-            const students = [student0, student1, student2, student3];
+            //const students = [student0, student1, student2, student3];
             const students = [];
             student0.push(student0);
             student1.push(student1);
@@ -69,10 +69,10 @@
     function test2() {
         const area2 = document.getElementById("area2");
 
-        const student0 = new Student("홍길동1", 100, 80, 90, 70);
+        const student0 = new Student("홍길동", 100, 80, 90, 70);
         console.log(student0);
-        const student1 = new Student("홍길동2", 100, 80, 90, 70);
-        const student2 = new Student("홍길동3", 100, 80, 90, 70);
+        const student1 = new Student("이길동", 80, 90, 58, 75);
+        const student2 = new Student("김길동", 68, 60, 92, 83);
 
         const students = [student0, student1, student2];
 
