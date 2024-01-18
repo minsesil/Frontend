@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <title>ani_fadeIn_fadeOut</title>
+</head>
+<body>
+    <h3>* fadeIn(), fadeOut(), fadeToggle()</h3>
+    <p>선택된 요소가 점점 선명해지면서 보여지고, 점점 투명해지면서 사라지게 하는 메소드</p>
+
+    <button id="fadeout">투명하게 숨기기</button>
+    <button id="fadein">불투명으로 보여주기</button>
+    <button id="fadetoggle">토글</button>
+
+    <br><br>
+
+    <img id="img1" src="html5/resources/img/christmas1.jpg">
+
+    <script>
+        $(()=> {
+            $('#fadeout').click(function() {
+                $('#img1').fadeOut(2000);
+            });
+            $('#fadein').click(function() {
+                $('#img1').fadeIn(3000);
+            })
+            $('#fadetoggle').click(function() {
+                $('#img1').fadeToggle(2000);
+            })
+        })
+    </script>
+    
+</body>
+</html>
