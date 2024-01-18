@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>요소선택(필터링관련선택자)</title>
+</head>
+<body>
+    <h3>* 필터 관련 선택자</h3>
+
+    <!--table>(tr>td*3)*5-->
+    <table border="1">
+        <tr>
+            <td>이름</td>
+            <td>혈액형</td>
+            <td>거주지</td>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>A형</td>
+            <td>서울</td>
+        </tr>
+        <tr>
+            <td>김길동</td>
+            <td>B형</td>
+            <td>경주</td>
+        </tr>
+        <tr>
+            <td>박길동</td>
+            <td>AB형</td>
+            <td>광주</td>
+        </tr>
+        <tr>
+            <td colspan="2">총인원</td>
+            <td>3명</td>
+        </tr>
+    </table>
+
+    <script>
+        $(()=>{
+            $('tr:even').css('backgroundColor','lightpink'); 
+            $('tr:odd').css('backgroundColor','lightyellow'); 
+            $('tr:first').css('backgroundColor','lightgray'); //tr중 첫번째
+            $('tr:last').css('backgroundColor','lightgray');
+        })
+    </script>
+
+    <h3>* 필터링과 관련된 메소드</h3>
+    <p>
+        기준이되는 요소 중에서 특정 요소만을 걸러서 선택해주는 메소드<br>
+        first(), last(), filter(), eq(), not()
+    </p>
+
+    <h4 class="test">test-1</h4>
+    <h4 class="test">test-2</h4>
+    <h4 class="test">test-3</h4>
+    <h4 class="test">test-4</h4>
+    <h4>test-5</h4>
+    <h4 class="test">test-6</h4>
+
+    <script>
+        $(()=> {
+            $('h4').first().css('font-size','20px');
+            $('h4').last().css('font-size','30px');
+
+            //.filter('요소'):선택한 요소만 가져오기
+            $('h4').filter('.test').html('<i>나중에 변경</i>');
+            $('h4').not('.test').css('color','hotpink');
+
+            //.text()==innerText()와 동일
+            $('h4').eq(2).text('<i>eq로 변경함<i>')
+        })
+    </script>
+    
+</body>
+</html>
