@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uitest-minaekyung</title>
+</head>
+
+<style>
+    div {
+        border-style: solid;
+        border-color: rgb(174, 169, 169);
+        padding: 15px;
+        width: 50%;
+        border-radius: 10px;
+        background-color:rgb(153, 233, 233);
+    }
+
+    tr {
+        height: 30px;
+    }
+</style>
+
+<body>
+
+    <div id = "radius">
+    <form action ="#" method="post" name="testFrm">
+
+        <fieldset>
+            <legend>필수 입력 사항</legend>
+            
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <td> <input name="id" size="20">&nbsp;<button onclick="doublecheck();">중복확인</button></td>
+                </tr>
+                <tr>
+                    <th>비밀번호</th>
+                    <td><input name="pwd" size="20"></td>
+                </tr>
+                <tr>
+                    <th>비밀번호확인</th>
+                    <td><input name="repwd" size="20"></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td><input name="email" size="20">
+                        <select name="selectemail">
+                            <option value="useremail" selected>직접선택</option>
+                            <option value="naver">네이버</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>추가 정보</legend>
+            <table>
+                <tr>
+                    <td>프로필사진 : <button onclick="select">파일선택</button>
+                        선택된 파일 없음
+                    </td>
+                </tr>
+                <tr>
+                    <td>성별 : <input type="radio" name="gender" value="M"> 남자
+                               <input type="radio" name="gender" value="F">여자
+                    </td>
+                </tr>
+                <tr>
+                    <td>생년월일 : <input type="date" name="dateIn"></td>
+                </tr>
+                <tr>
+                    <td>취미</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="hobby" value="baseball">야구
+                        <input type="checkbox" name="hobby" value="basketball">농구
+                        <input type="checkbox" name="hobby" value="soccer">축구<br>
+                        <input type="checkbox" name="hobby" value="study">공부
+                        <input type="checkbox" name="hobby" value="music">음악감상<br>
+                        <input type="checkbox" name="hobby" value="etc">기타
+                    </td>
+                </tr>
+                <tr>
+                    <td><br>자기소개
+                        <br><textarea name="content" cols="35" rows="5"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <br>
+        <input type="button" value="회원가입" onclick="joincheck();">
+        <input type="reset" value="다시입력">
+    </form>
+    </div>
+
+    <script>
+        function joincheck(){
+ 
+            if(document.testFrm.pwd.value != document.testFrm.repwd.value) {
+                alert("비밀번호가 틀립니다");
+                document.testFrm.repwd.value="";  //리셋
+                document.testFrm.repwd.focus();
+                return;
+
+            } else {
+                alert("비밀번호가 일치합니다");
+                document.testFrm.submit();
+            }           
+        }
+    </script>
+
+
+
+</body>
+</html>
